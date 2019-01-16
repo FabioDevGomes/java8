@@ -18,8 +18,10 @@ public class TestValidator {
 		System.out.println("=======================================");
 		
 		Validator<String> validatorCEPLambda = value -> value.matches("[0-9]{5}-[0-9]{3}");
+		System.out.println(validatorCEPLambda.validate("84843-550"));
 
 		Validator<String> validatorCEPLambda2 = value -> { return value.matches("[0-9]{5}-[0-9]{3}");};
+		System.out.println(validatorCEPLambda2.validate("848423-550"));
 	}
 
 }

@@ -6,9 +6,16 @@ public class User {
 		this.name = name;
 		this.moderator = false;
 	}
+	
+	public User(String name, int points) {
+		super();
+		this.name = name;
+		this.points = points;
+	}
 
 	private String name;
 	private boolean moderator;
+	private int points;
 
 	public boolean isModerator() {
 		return moderator;
@@ -24,6 +31,14 @@ public class User {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public int getPoints() {
+		return points;
+	}
+
+	public void setPoints(int points) {
+		this.points = points;
 	}
 
 }

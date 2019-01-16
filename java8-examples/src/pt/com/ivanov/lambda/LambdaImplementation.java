@@ -34,14 +34,24 @@ public class LambdaImplementation {
 		
 		showUsingLambdaExpressions(users2);
 		
+		implementingTwiceWithAndThen(users2);
 		
+	}
+
+	private static void implementingTwiceWithAndThen(List<User> users2) {
+		Consumer<User> showMesssage = u -> System.out.println("First show the message");		
+		Consumer<User> showNames = u -> System.out.println(u.getName());
+		
+		users2.forEach(showMesssage.andThen(showNames));
 	}
 
 	private static void showUsingLambdaExpressions(List<User> users2) {
 		users2.forEach((User u) -> {System.out.println(u.getName());});
 		System.out.println("-----");
+		
 		users2.forEach((User u) -> System.out.println(u.getName()));
 		System.out.println("-----");
+		
 		users2.forEach( u -> System.out.println(u.getName()));
 	}
 
