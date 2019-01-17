@@ -1,4 +1,4 @@
-package pt.vom.uvanov.predicate;
+package pt.com.ivanov.predicate;
 
 import java.util.ArrayList;
 import java.util.List;
