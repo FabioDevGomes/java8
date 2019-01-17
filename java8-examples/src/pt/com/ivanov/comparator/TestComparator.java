@@ -17,6 +17,7 @@ public class TestComparator {
 		User user4 = new User("Test B", 30);
 		
 		List<User> users = Arrays.asList(user1, user2, user3, user4);
+		List<User> users2 = Arrays.asList(user1, user2, user3, user4);
 		
 		Comparator<User> comparator = new Comparator<User>() {
 			@Override
@@ -24,11 +25,15 @@ public class TestComparator {
 				return o1.getName().compareTo(o2.getName());
 			}
 		};
-		
-//		Collections.sort(users, comparator);
 
-		Collections.sort(users, (u1, u2)  -> u1.getName().compareTo(u2.getName()));
+		Comparator<User> comparator2 = (User o1, User o2) -> o2.getPoints() - o1.getPoints();
 		
+		Collections.sort(users2, comparator2);
+		users2.forEach(u -> System.out.println(u.getName() +" - "+ u.getPoints()));
+		
+		System.out.println("============================");
+		
+		Collections.sort(users, (u1, u2)  -> u1.getName().compareTo(u2.getName()));
 		users.forEach(u -> System.out.println(u.getName()));
 		
 	}

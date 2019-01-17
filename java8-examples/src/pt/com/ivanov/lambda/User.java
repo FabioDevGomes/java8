@@ -21,8 +21,8 @@ public class User {
 		return moderator;
 	}
 
-	public void setModerator(boolean moderator) {
-		this.moderator = moderator;
+	public void tornarModerador() {
+		this.moderator = true;
 	}
 
 	public String getName() {
