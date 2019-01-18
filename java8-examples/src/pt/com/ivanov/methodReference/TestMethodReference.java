@@ -3,6 +3,9 @@ package pt.com.ivanov.methodReference;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.BiFunction;
+import java.util.function.Function;
+import java.util.function.Supplier;
 
 import pt.com.ivanov.lambda.User;
 
@@ -23,6 +26,25 @@ public class TestMethodReference {
 		
 		users.forEach(u -> System.out.println(u.getName() +" - "+ u.getPoints()));
 		
+		System.out.println("===============");
 		
+		usingNewKeyWord();
+	}
+	
+	public static void usingNewKeyWord() {
+		Supplier<User> userFactory = User::new;
+		User user = userFactory.get();
+		
+		System.out.println(user);
+		
+		Function<String, User> userFactory2 = User::new;
+		User user2 = userFactory2.apply("Test constructor");
+		
+		System.out.println(user2.getName());
+		
+		BiFunction<String, Integer, User> userFactory3 = User::new;
+		User user3 = userFactory3.apply("New test", 20);
+		
+		System.out.println(user3.getName() +" - "+ user3.getPoints());
 	}
 }
