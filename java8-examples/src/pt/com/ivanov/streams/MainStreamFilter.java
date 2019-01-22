@@ -3,6 +3,8 @@ package pt.com.ivanov.streams;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import pt.com.ivanov.lambda.User;
@@ -41,7 +43,6 @@ public class MainStreamFilter {
 		System.out.println("==============");
 		
 		users2.forEach(System.out::println);
-		
 		
 	}
 	
