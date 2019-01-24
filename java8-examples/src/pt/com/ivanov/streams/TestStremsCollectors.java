@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.BiFunction;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import pt.com.ivanov.lambda.User;
 
@@ -48,6 +49,7 @@ public class TestStremsCollectors {
 		Set<User> users4 = users.stream().filter(u -> u.getPoints() > 25).collect(Collectors.toSet());
 		users4.forEach(u -> System.out.println(u.getPoints()));
 		
+		//autoboxing unnecessary
 		List<Integer> points = users.stream().map(u -> u.getPoints()).collect(Collectors.toList());
 		List<String> names = users.stream().map(u -> u.getName()).collect(Collectors.toList());
 		
@@ -56,5 +58,16 @@ public class TestStremsCollectors {
 		points.stream().forEach(u -> System.out.println(u));
 		names.stream().forEach(u -> System.out.println(u));
 		
+		System.out.println("============== without autoboxing unnecessary");
+
+		//without autoboxing unnecessary
+		IntStream intStream = users.stream().mapToInt(u -> u.getPoints());
+		int[] pointsExtracted = intStream.toArray();
+//		System.out.println(pointsExtracted);
+		
+		System.out.println("============== avarege");
+		
+		double avarege = users.stream().mapToInt(User::getPoints).average().getAsDouble();
+		System.out.println(avarege);
 	}
 }
