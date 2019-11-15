@@ -18,7 +18,7 @@ public class Lambda {
 
 		System.out.println();
 		
-		int incremento = 100; //não permite alterar o valor dentro da expressão lambda	
+		int incremento = 100; //não permite alterar o valor dentro da expressão lambda
 		numeros.forEach(num -> {
 			num = num + incremento;
 			System.out.println(num);
