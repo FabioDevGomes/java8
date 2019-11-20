@@ -1,6 +1,7 @@
 package pt.com.ivanov.predicate;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -33,9 +34,6 @@ public class TestPredicate {
 
 		//with lambda
 		Predicate<User> predicate2 =  u -> u.getPoints() > 100;
-		
-		
-//		users.removeIf(predicate2);
 		
 		//without declatation
 		users.removeIf(u -> u.getPoints() > 125);
