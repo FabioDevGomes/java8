@@ -11,7 +11,6 @@ public class User {
 	}
 	
 	public User(String name, int points) {
-		super();
 		this.name = name;
 		this.points = points;
 	}
