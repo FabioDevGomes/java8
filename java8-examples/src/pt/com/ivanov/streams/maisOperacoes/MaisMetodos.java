@@ -19,6 +19,11 @@ public class MaisMetodos {
 		
 		List<User> users = Arrays.asList(user1, user2, user3, user4, user5);
 		
+		Stream<User> criacaoDireta = Stream.of(user1, user2, user3, user4);
+		System.out.println(criacaoDireta.count());
+
+		Stream<User> criacaoComBuilder = Stream.<User>builder().add(user5).add(user2).build();
+		
 		System.out.println(users.stream().count());
 		
 		users.stream().skip(2).forEach(u -> System.out.println(u.getName()));

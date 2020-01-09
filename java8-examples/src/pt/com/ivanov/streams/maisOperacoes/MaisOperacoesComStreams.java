@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.IntStream;
 
 import pt.com.ivanov.lambda.User;
 
@@ -27,6 +28,11 @@ public class MaisOperacoesComStreams {
 		
 		System.out.println(users.stream().allMatch(User::isModerator));
 		System.out.println(users.stream().anyMatch(User::isModerator));
+		
+		System.out.println("--------");
+		
+		//o supplier mantem o estado
+		IntStream.generate(new Fibonacci()).limit(10).forEach(System.out::println);
 		
 	}
 
