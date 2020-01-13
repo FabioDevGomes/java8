@@ -21,6 +21,13 @@ public class PraticandoComFiles {
 		
 		Path caminho = Paths.get(".\\src\\pt\\com\\ivanov\\streams\\maisOperacoes");
 		Files.list(caminho).filter(p -> p.toString().contains("M")).map(p -> lines(p)).forEach(System.out::println);
+
+		System.out.println("---");
+		
+		Stream<String> streamFlat = Files.list(caminho).filter(p -> p.toString()
+				.contains("M")).flatMap(p -> lines(p));
+		streamFlat.forEach(System.out::println);
+
 		
 	}
 	
