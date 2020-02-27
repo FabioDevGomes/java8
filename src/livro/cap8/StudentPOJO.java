@@ -7,7 +7,7 @@ public class StudentPOJO {
   private String name;
   private Set<String> books;
 
-  public StudentPOJO(String book) {
+  public void addBook(String book) {
     this.books.add(book);
   }
 
